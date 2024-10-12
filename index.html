@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майнкрафт Сервер</title>
+    
+    <!-- Підключення стилів Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <!-- Підключення власних стилів -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Підключення скриптів Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <!-- Підключення власних скриптів -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Новини Майнкрафт сервера</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">Головна</a></li>
+                <li><a href="#" onclick="showContent('map')">Мапа</a></li>
+                <li><a href="#" onclick="showContent('modpack')">Модпак</a></li>
+            </ul>
+        </nav>
+        <div id="language-switcher">
+            <button onclick="switchLanguage('uk')">Українська</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Розділ "Головна" -->
+        <section id="home" class="content">
+            <h2 id="news-title">Новини</h2>
+            <p id="news-content">Тут будуть показуватися останні новини вашого сервера Майнкрафт.</p>
+        </section>
+
+        <!-- Розділ "Мапа" з двома інтерактивними картами -->
+        <section id="map" class="content" style="display:none;">
+            <h2 id="map-title">Мапа світу</h2>
+
+            <div id="regions-map" style="width: 600px; height: 400px;"></div>
+            <p>Мапа регіонів</p>
+
+            <div id="cities-map" style="width: 600px; height: 400px; margin-top: 20px;"></div>
+            <p>Мапа міст</p>
+        </section>
+
+        <!-- Розділ "Модпак" з кнопкою завантаження -->
+        <section id="modpack" class="content" style="display:none;">
+            <h2 id="modpack-title">Модпак</h2>
+            <p id="modpack-content">Скачайте модпак для гри на сервері.</p>
+            <a href="modpack.zip" id="modpack-link" download>Завантажити модпак</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Minecraft Server</p>
+    </footer>
+</body>
+</html>
